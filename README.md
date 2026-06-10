@@ -6,48 +6,48 @@ This project demonstrates the deployment of a containerized web application on A
 The objective of this project was to gain hands-on experience with Kubernetes, Amazon EKS, AWS Fargate, IAM, networking, and ingress-based traffic routing.
 
 
-**AWS Resources Used**
-Networking
-Amazon VPC
-Public Subnets
-Private Subnets
-Route Tables
-Internet Gateway
-Security Groups
+**AWS Resources Used** : 
+    Networking |
+Amazon VPC | 
+Public Subnets | 
+Private Subnets | 
+Route Tables | 
+Internet Gateway | 
+Security Groups |
 
-**Compute**
-Amazon EKS Cluster
-AWS Fargate Profile
+**Compute** : 
+Amazon EKS Cluster | 
+AWS Fargate Profile 
 
-**Identity and Access Management**
-IAM Roles
-IAM Policies
+**Identity and Access Management** : 
+IAM Roles | 
+IAM Policies | 
 IAM Service Account (IRSA)
 
-**Load Balancing**
-Application Load Balancer (ALB)
-Target Groups
-Listener Rules
+**Load Balancing** : 
+Application Load Balancer (ALB) |
+Target Groups | 
+Listener Rules 
 
 
-**Kubernetes Resources Used**
-Namespace
-Deployment
-Pods
-Service
-Ingress
-Service Account
+**Kubernetes Resources Used** : 
+Namespace | 
+Deployment | 
+Pods | 
+Service |
+Ingress |
+Service Account 
 
-**Tools and Technologies**
-AWS
-Amazon EKS
-AWS Fargate
-Kubernetes
-kubectl
-eksctl
-AWS CLI
-Helm
-Docker
+**Tools and Technologies** : 
+AWS | 
+Amazon EKS |
+AWS Fargate |
+Kubernetes |
+kubectl |
+eksctl |
+AWS CLI |
+Helm | 
+Docker 
 
 **Implementation Steps**
 **Step 1**: Create EKS Cluster
