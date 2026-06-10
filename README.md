@@ -5,27 +5,8 @@ This project demonstrates the deployment of a containerized web application on A
 
 The objective of this project was to gain hands-on experience with Kubernetes, Amazon EKS, AWS Fargate, IAM, networking, and ingress-based traffic routing.
 
-Architecture
-Internet
-    │
-    ▼
-Application Load Balancer (ALB)
-    │
-    ▼
-Ingress
-    │
-    ▼
-Service
-    │
-    ▼
-Pods (Game-2048)
-    │
-    ▼
-AWS Fargate
-    │
-    ▼
-Amazon EKS Cluster
-AWS Resources Used
+
+**AWS Resources Used**
 Networking
 Amazon VPC
 Public Subnets
@@ -33,25 +14,31 @@ Private Subnets
 Route Tables
 Internet Gateway
 Security Groups
-Compute
+
+**Compute**
 Amazon EKS Cluster
 AWS Fargate Profile
-Identity and Access Management
+
+**Identity and Access Management**
 IAM Roles
 IAM Policies
 IAM Service Account (IRSA)
-Load Balancing
+
+**Load Balancing**
 Application Load Balancer (ALB)
 Target Groups
 Listener Rules
-Kubernetes Resources Used
+
+
+**Kubernetes Resources Used**
 Namespace
 Deployment
 Pods
 Service
 Ingress
 Service Account
-Tools and Technologies
+
+**Tools and Technologies**
 AWS
 Amazon EKS
 AWS Fargate
@@ -61,8 +48,9 @@ eksctl
 AWS CLI
 Helm
 Docker
-Implementation Steps
-Step 1: Create EKS Cluster
+
+**Implementation Steps**
+**Step 1**: Create EKS Cluster
 eksctl create cluster \
   --name demo-cluster \
   --region us-east-1 \
@@ -70,7 +58,7 @@ eksctl create cluster \
 
 Created the EKS control plane and networking resources.
 
-Step 2: Create Fargate Profile
+**Step 2**: Create Fargate Profile
 eksctl create fargateprofile \
   --cluster demo-cluster \
   --region us-east-1 \
@@ -79,7 +67,7 @@ eksctl create fargateprofile \
 
 Configured AWS Fargate to run workloads deployed in the game-2048 namespace.
 
-Step 3: Install AWS Load Balancer Controller
+**Step 3**: Install AWS Load Balancer Controller
 
 Configured:
 
@@ -90,7 +78,7 @@ Helm Chart
 
 This controller automatically provisions Application Load Balancers based on Kubernetes Ingress resources.
 
-Step 4: Deploy Application
+**Step 4**: Deploy Application
 kubectl apply -f 2048_full.yaml
 
 Created:
@@ -98,10 +86,9 @@ Created:
 Deployment
 Service
 Ingress
-Step 5: Access Application
 
+**Step 5**: Access Application
 The AWS Load Balancer Controller automatically:
-
 Created an Application Load Balancer
 Registered pod targets
 Configured listener rules
@@ -109,15 +96,6 @@ Routed external traffic to Kubernetes services
 
 Users could access the application using the ALB DNS endpoint.
 
-Key Learnings
-Amazon EKS cluster provisioning
-Kubernetes workload deployment
-AWS Fargate serverless container execution
-Kubernetes Services and Ingress
-AWS Load Balancer Controller
-IAM Roles for Service Accounts (IRSA)
-Application Load Balancer integration with Kubernetes
-Container networking and traffic routing
-Outcome
+**Outcome**
 
 Successfully deployed and exposed a containerized web application on Amazon EKS using AWS Fargate and AWS Application Load Balancer, demonstrating practical knowledge of Kubernetes orchestration and AWS cloud-native services.
